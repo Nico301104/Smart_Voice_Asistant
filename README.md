@@ -1,19 +1,86 @@
-# Nico — Offline Voice Assistant
+# 🎙️ Nico — Offline Voice Assistant
 
-## Requirements
+Nico is a lightweight offline voice assistant built in Python. It listens for a wake word, processes voice commands locally, and executes actions without relying on cloud services.
 
+---
+
+## 🚀 Features
+
+* Offline speech recognition (Vosk)
+* Wake word detection (`nico`)
+* Launch desktop applications
+* Perform web searches
+* Optional GUI interface
+* Fast and lightweight
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Nico301104/Smart_Voice_Asistant.git
+cd Smart_Voice_Asistant
 ```
+
+### 2. Install dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-Download a Vosk model from https://alphacephei.com/vosk/models  
-Extract it into a folder named `model/` next to the project files.
+---
 
-Recommended: `vosk-model-small-en-us-0.15`
+## 🧠 Speech Model Setup
+
+Download a Vosk model:
+https://alphacephei.com/vosk/models
+
+Recommended:
+
+```
+vosk-model-small-en-us-0.15
+```
+
+Extract it like this:
 
 ```
 nico/
-├── model/          ← extracted vosk model goes here
+├── model/
+```
+
+---
+
+## ▶️ Run
+
+### With GUI
+
+```bash
+python gui.py
+```
+
+### Without GUI
+
+```bash
+python main.py
+```
+
+---
+
+## 🎯 Wake Word
+
+```
+nico
+```
+
+---
+
+## 🗂️ Project Structure
+
+```
+nico/
+├── model/
 ├── config.py
 ├── listener.py
 ├── speaker.py
@@ -24,39 +91,47 @@ nico/
 └── requirements.txt
 ```
 
-## Run
+---
 
-With GUI:
-```
-python gui.py
-```
+## 🧩 Commands
 
-Without GUI (terminal):
-```
-python main.py
-```
+| Command                  | Action          |
+| ------------------------ | --------------- |
+| `open chrome`            | Launches Chrome |
+| `open terminal`          | Opens terminal  |
+| `search for <query>`     | Google search   |
+| `look up the weather`    | Weather search  |
+| `stop` / `quit` / `exit` | Stop assistant  |
 
-## Wake words
+---
 
-`nico` 
+## ⚙️ Add Custom Apps
 
-## Commands
-
-| Say | Action |
-|-----|--------|
-| `open chrome` | launches Chrome |
-| `open terminal` | launches terminal |
-| `search for python tutorials` | opens Google search |
-| `look up the weather` | opens Google search |
-| `stop` / `quit` / `exit` | shuts down |
-
-## Adding apps
-
-Edit `APPS` in `config.py`:
+Edit `config.py`:
 
 ```python
 APPS = {
-    "vlc":  ["vlc"],
+    "vlc": ["vlc"],
     "slack": ["slack"],
 }
 ```
+
+---
+
+## 🛠️ Tech Stack
+
+* Python
+* Vosk
+* Tkinter
+
+---
+
+## 📌 Notes
+
+* Works offline (except web searches)
+* Designed for Windows
+* Requires microphone access
+
+---
+## Autor
+* Sandru Nicolae-Andrei
